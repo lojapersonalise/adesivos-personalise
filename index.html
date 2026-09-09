@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Crie etiquetas personalizadas prontas para impressão.">
+  <title>Criador de Etiquetas | Personalise</title><link rel="stylesheet" href="/src/styles.css">
+</head><body>
+<header class="topbar"><a class="brand" href="/" aria-label="Personalise, início"><span>p.</span> personal<span>ise</span></a><div class="secure">🔒 Sua imagem fica apenas nesta criação</div></header>
+<main>
+  <section class="hero"><div><span class="eyebrow">FEITO POR VOCÊ, COM CARINHO</span><h1>Crie etiquetas que têm<br><em>a sua cara.</em></h1><p>Envie sua imagem, escolha um estilo e receba três formatos prontos para imprimir.</p></div><div class="hero-art" aria-hidden="true"><span>Maria</span><span>Lucas</span><span>Sofia</span></div></section>
+  <nav class="steps" aria-label="Etapas"><span class="active" data-step="1"><b>1</b> Personalizar</span><i></i><span data-step="2"><b>2</b> Criar</span><i></i><span data-step="3"><b>3</b> Baixar</span></nav>
+  <section id="editor" class="panel"><div class="panel-title"><span>1</span><div><h2>Personalize sua etiqueta</h2><p>Conte como ela deve ficar. Você poderá editar depois.</p></div></div>
+    <form id="label-form" novalidate>
+      <div class="grid"><div><label>Imagem principal <small>OBRIGATÓRIO</small></label><div id="dropzone" class="dropzone" tabindex="0" role="button" aria-describedby="file-help"><input id="image" type="file" accept="image/png,image/jpeg,image/webp" hidden><img id="upload-preview" alt="Prévia da imagem"><div class="upload-copy"><strong>↑</strong><b>Arraste sua imagem aqui</b><span>ou <u>escolha do dispositivo</u></span><small id="file-help">PNG, JPG ou WEBP · máximo 8 MB</small></div></div><p class="error" id="image-error" role="alert"></p></div>
+      <div class="fields"><label for="label-text">Texto da etiqueta <small>OBRIGATÓRIO</small></label><div class="input-wrap"><input id="label-text" maxlength="32" placeholder="Ex.: Maria Eduarda" required><span id="counter">0/32</span></div><p class="hint">Nomes curtos ficam mais legíveis no tamanho P.</p><p class="error" id="text-error" role="alert"></p><label for="notes">Instrução adicional <small>OPCIONAL</small></label><textarea id="notes" maxlength="180" placeholder="Ex.: usar tons de lilás e estrelinhas"></textarea></div></div>
+      <fieldset><legend>Escolha um estilo <small>OBRIGATÓRIO</small></legend><div id="styles" class="style-grid"></div><div id="custom-wrap" hidden><label for="custom">Descreva o estilo personalizado</label><input id="custom" maxlength="180" placeholder="Ex.: dinossauros em aquarela e fundo verde-claro"></div></fieldset>
+      <label class="bleed"><input id="bleed" type="checkbox" checked> Incluir sangria visual de 2 mm <span>Recomendado para impressão e corte</span></label>
+      <button class="primary" type="submit">✨ Gerar minhas etiquetas <span>→</span></button><p class="privacy">🔒 Não armazenamos sua imagem permanentemente.</p>
+    </form>
+  </section>
+  <section id="loading" class="panel state" hidden aria-live="polite"><div class="spinner"></div><h2>Preparando suas três etiquetas…</h2><p>Adaptando imagem, texto e decoração para cada formato.</p></section>
+  <section id="results" hidden><div class="results-head"><div><span class="eyebrow">SUAS ARTES ESTÃO PRONTAS</span><h2>Três tamanhos, composições únicas.</h2><p id="mode-note"></p></div><div class="global-actions"><button id="edit" class="secondary">← Editar criação</button><button id="regenerate" class="secondary">↻ Gerar novamente</button><button id="download-all" class="primary small">↓ Baixar todas</button></div></div><div id="gallery" class="gallery"></div>
+  </section>
+</main>
+<dialog id="preview-dialog"><button id="close-dialog" aria-label="Fechar">×</button><img id="large-preview" alt="Visualização ampliada da etiqueta"></dialog>
+<footer>Personalise · Etiquetas criativas prontas para imprimir</footer><script type="module" src="/src/app.js"></script></body></html>
